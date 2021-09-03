@@ -15,7 +15,7 @@ import Java from "./resources/JavaLogo";
 import SpringLogo from "./resources/SpringLogo";
 import KotlinLogo from "./resources/KotlinLogo";
 
-import classes from "./styles/index.module.css";
+import classes from "./styles/home.module.css";
 
 const texts = [
   { text: "Software Developer", article: "a", curr: 0, next: 1 },

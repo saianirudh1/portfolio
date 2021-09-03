@@ -288,8 +288,8 @@
 .img {
   height: 10vw;
   width: 100%;
-  margin: 1rem 1rem;
-  animation: ticker 25s linear infinite;
+  margin: 1rem 2rem;
+  animation: ticker 35s linear infinite;
 }
 
 @keyframes ticker {
@@ -325,6 +325,7 @@
   }
 
   .img {
+    margin: 1rem 0.5rem;
     animation: ticker 20s linear infinite;
   }
 }
