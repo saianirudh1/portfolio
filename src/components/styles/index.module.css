@@ -1,0 +1,330 @@
+/* Section 1 styles */
+.section-1 {
+  background-color: transparent;
+  width: 100%;
+  transition: transform 0.3s ease-in;
+}
+
+/* Greeting Styles */
+.greeting-container {
+  background-color: inherit;
+  position: relative;
+  left: -2.5%;
+  opacity: 0;
+  animation: hello 1s cubic-bezier(0.41, 0.01, 0.2, 1) 1s forwards;
+}
+
+@keyframes hello {
+  0% {
+    left: -2.5%;
+    opacity: 0;
+  }
+
+  50% {
+    left: 0%;
+  }
+
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+.greeting {
+  color: var(--theme-primary-text);
+  width: max-content;
+  font-size: clamp(0.5rem, calc(100% + 1vw), 4rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  padding: 0 5vw;
+}
+
+.header {
+  display: flex;
+  padding: 0 5vw;
+}
+
+.static-text h2 {
+  font-size: clamp(1.65rem, calc(100% + 6vw), 11rem);
+  margin: 0;
+  color: var(--theme-primary-text);
+  font-weight: 600;
+}
+
+.static-text h2 span {
+  font-style: italic;
+  font-weight: 150;
+}
+
+.header ul {
+  margin-left: 1rem;
+  list-style: none;
+}
+
+/* Moving text Styles */
+.dynamic-text {
+  font-size: clamp(2rem, calc(100% + 6vw), 11rem);
+  font-weight: 600;
+  position: relative;
+  background: var(--theme-background-fallback);
+  background-clip: text;
+  background: -webkit-linear-gradient(var(--theme-linear-background));
+  background: linear-gradient(var(--theme-linear-background));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dynamic-text::before,
+.dynamic-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.dynamic-text::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: var(--theme-background);
+}
+
+.dynamic-text::after {
+  height: 100%;
+  width: 0.2rem;
+  border-radius: 1rem;
+  background-color: var(--theme-primary-text);
+}
+
+.dynamic-text[data-item="0"]::before {
+  animation: typing 6s steps(18) 1.5s infinite forwards;
+}
+
+.dynamic-text[data-item="1"]::before {
+  animation: typing 6s steps(20) 1.5s infinite forwards;
+}
+
+.dynamic-text[data-item="2"]::before {
+  animation: typing 6s steps(17) 1.5s infinite forwards;
+}
+
+.dynamic-text[data-item="3"]::before {
+  animation: typing 6s steps(14) 1.5s infinite forwards;
+}
+
+.dynamic-text[data-item="0"]::after {
+  animation: typing 6s steps(18) 1.5s infinite forwards,
+    blink 750ms steps(18) infinite;
+}
+
+.dynamic-text[data-item="1"]::after {
+  animation: typing 6s steps(20) 1.5s infinite forwards,
+    blink 750ms steps(20) infinite;
+}
+
+.dynamic-text[data-item="2"]::after {
+  animation: typing 6s steps(17) 1.5s infinite forwards,
+    blink 750ms steps(17) infinite;
+}
+
+.dynamic-text[data-item="3"]::after {
+  animation: typing 6s steps(14) 1.5s infinite forwards,
+    blink 750ms steps(14) infinite;
+}
+
+@keyframes typing {
+  50% {
+    left: 100.5%;
+  }
+
+  65% {
+    left: 100.5%;
+  }
+
+  82.5% {
+    left: 0%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: transparent;
+  }
+}
+
+/* Border Styles */
+.border {
+  aspect-ratio: 900/175;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.dark-border {
+  background-image: url("../../svg/layered-waves-dark.svg");
+}
+
+.light-border {
+  background-image: url("../../svg/layered-waves-light.svg");
+}
+
+/* Media Queries */
+@media screen and (max-width: 1095px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header ul {
+    margin: 0;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+/* Experience Section Styles */
+.experience-container {
+  margin-top: 4vw;
+  background-color: inherit;
+  padding: 0 5vw;
+}
+
+.title {
+  color: var(--theme-primary-text);
+  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  letter-spacing: 0.025em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.description {
+  display: flex;
+  padding-top: 2.5vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  flex-direction: column;
+}
+
+.description-title {
+  color: var(--theme-primary-text);
+  letter-spacing: 0.1em;
+  font-size: clamp(0em, calc(100% + 0.75vw), 3em);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.description-text {
+  color: var(--theme-primary-text);
+  font-size: clamp(0em, calc(100% + 0.5vw), 3em);
+  font-weight: 350;
+  font-style: italic;
+  padding: 0 1rem;
+  letter-spacing: 0.1em;
+}
+
+.description-text a {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: var(--theme-background-fallback);
+  background-clip: text;
+  background: -webkit-linear-gradient(var(--theme-linear-background));
+  background: linear-gradient(var(--theme-linear-background));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.description-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.5px;
+  background: var(--theme-background-fallback);
+  background: -webkit-linear-gradient(var(--theme-linear-background));
+  background: linear-gradient(var(--theme-linear-background));
+  height: 3px;
+  width: 100%;
+}
+
+/* Skills Section Styles */
+.skills-container {
+  margin-top: 4vw;
+  background-color: inherit;
+  padding: 0 5vw;
+}
+
+.skills {
+  display: flex;
+  position: relative;
+}
+
+.skills::before {
+  content: "";
+  width: 15vw;
+  height: 11vw;
+  position: absolute;
+  left: -10rem;
+  top: 1rem;
+  z-index: 1;
+  background-color: var(--theme-background);
+}
+
+.skills::after {
+  content: "";
+  width: 15vw;
+  height: 11vw;
+  position: absolute;
+  right: -5rem;
+  top: 1rem;
+  z-index: 1;
+  background-color: var(--theme-background);
+}
+
+.img {
+  height: 10vw;
+  width: 100%;
+  margin: 1rem 1rem;
+  animation: ticker 25s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(100vw, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-175vw, 0, 0);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dynamic-text,
+  .static-text h2 {
+    font-size: clamp(1.5rem, calc(100% + 4vw), 11rem);
+  }
+
+  .greeting {
+    font-size: clamp(0.5rem, calc(100% + 0.015vw), 4rem);
+  }
+
+  .description {
+    padding-top: 4vw;
+  }
+
+  .description-title {
+    font-size: 1em;
+  }
+
+  .description-text {
+    font-size: 0.75em;
+  }
+
+  .img {
+    animation: ticker 20s linear infinite;
+  }
+}
