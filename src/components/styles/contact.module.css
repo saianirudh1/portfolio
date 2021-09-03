@@ -1,0 +1,145 @@
+.contact {
+  display: grid;
+  grid-template-columns: minmax(75% 90%) auto;
+  place-items: center;
+  position: relative;
+  transform: translateY(7%);
+  opacity: 0;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+/* Logo Styles */
+.socials {
+  grid-row-start: 1;
+}
+
+.logo {
+  font-size: 3em;
+  margin: 2.5rem 3rem;
+  color: var(--theme-primary-text);
+  cursor: pointer;
+  position: relative;
+}
+
+.logo:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s ease-in;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  left: -30%;
+  top: -20%;
+  z-index: -1;
+  background-color: var(--theme-secondary-background);
+}
+
+/* Form Styles */
+.form-container {
+  grid-row-start: 2;
+  width: 75vw;
+  border-radius: 1rem;
+  background-color: var(--theme-secondary-background);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: 1rem;
+}
+
+.form-inputs label {
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  color: var(--theme-primary-text);
+}
+
+.form-inputs input {
+  height: 2.5rem;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  color: var(--theme-primary-text);
+  background-color: var(--theme-input-background);
+  border: 1px solid var(--theme-primary-text);
+  border-radius: 0.25rem;
+  outline: none;
+  opacity: 0.75;
+}
+
+.form-inputs textarea {
+  resize: none;
+  font-size: 1em;
+  font-family: inherit;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  color: var(--theme-primary-text);
+  background-color: var(--theme-input-background);
+  border: 1px solid var(--theme-primary-text);
+  border-radius: 0.25rem;
+  outline: none;
+  opacity: 0.75;
+}
+
+.form-inputs input:hover,
+.form-inputs input:focus,
+.form-inputs textarea:hover,
+.form-inputs textarea:focus {
+  opacity: 1;
+}
+
+.form button {
+  margin: 1rem;
+  padding: 1rem 5vw;
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  color: var(--theme-background);
+  background-color: var(--theme-primary-text);
+  opacity: 0.75;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.form button:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 2.25em;
+    margin: 1.5rem;
+  }
+
+  .logo::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    left: -30%;
+    top: -20%;
+    z-index: -1;
+    background-color: var(--theme-secondary-background);
+  }
+
+  .form-inputs label {
+    font-size: 1.25em;
+  }
+
+  .form button {
+    font-size: 1.25em;
+  }
+}
