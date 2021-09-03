@@ -1,0 +1,10 @@
+.layout {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--theme-background);
+  overflow: hidden;
+}
+
+.layout main {
+  background-color: inherit;
+}

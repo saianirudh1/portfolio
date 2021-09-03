@@ -1,0 +1,46 @@
+.bulb-light {
+  --bulb-first: #fdda00;
+  --bulb-second: #fcc006;
+  --bulb-third: #01a7f2;
+  --bulb-fourth: #0176ba;
+  --bulb-fifth: #535a5d;
+  --bulb-outline: #000000;
+}
+
+.bulb-dark {
+  --bulb-first: transparent;
+  --bulb-second: transparent;
+  --bulb-third: transparent;
+  --bulb-fourth: transparent;
+  --bulb-fifth: transparent;
+  --bulb-outline: var(--theme-primary-text);
+}
+
+.bulb-light path,
+.bulb-dark path {
+  stroke-width: 0.264583;
+}
+
+.first {
+  fill: var(--bulb-first);
+}
+
+.second {
+  fill: var(--bulb-second);
+}
+
+.third {
+  fill: var(--bulb-third);
+}
+
+.fourth {
+  fill: var(--bulb-fourth);
+}
+
+.fifth {
+  fill: var(--bulb-fifth);
+}
+
+.outline {
+  fill: var(--bulb-outline);
+}

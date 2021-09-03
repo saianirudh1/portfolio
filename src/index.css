@@ -1,13 +1,61 @@
+:root {
+  --theme-background: "";
+  --theme-primary-text: "";
+  --theme-secondary-background: "";
+  --theme-input-background: "";
+  --theme-background-fallback: "";
+  --theme-linear-background: "";
+  --typing-animation-steps: 18;
+  --typing-animation-speed: 6s;
+}
+
+[data-theme="light"] {
+  --theme-background: #eeeeee;
+  --theme-primary-text: #303841;
+  --theme-secondary-background: #d1d0d0;
+  --theme-input-background: #d1d0d0;
+  --theme-background-fallback: #8a2387;
+  --theme-linear-background: to right, #f27121, #e94057, #8a2387;
+}
+
+[data-theme="dark"] {
+  --theme-background: #303841;
+  --theme-primary-text: #eeeeee;
+  --theme-secondary-background: #3a4750;
+  --theme-input-background: #42515b;
+  --theme-background-fallback: #c6ffdd;
+  --theme-linear-background: to right, #f7797d, #fbd786, #c6ffdd;
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+  background-color: #303841;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  background-color: #42515b;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
