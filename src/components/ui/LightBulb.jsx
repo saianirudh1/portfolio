@@ -6,21 +6,26 @@ import classes from "./lightBulb.module.css";
 function LightBulb(props) {
   const theme = useContext(ThemeContext).theme;
   const toggleTheme = useContext(ThemeContext).toggleTheme;
-  const toggleIntro = useContext(ThemeContext).toggleIntro;
+  const setIntro = useContext(ThemeContext).setIntro;
 
   const themeHandler = function () {
     toggleTheme();
-    toggleIntro();
+
+    setIntro(true);
+
+    setTimeout(() => {
+      setIntro(false);
+    }, 4250);
   };
 
   const themeClass = `${classes[`bulb-${theme}`]}`;
   return (
     <div className={props.className} style={props.style}>
       <svg
-        width="1.8rem"
-        height="1.8rem"
+        width="2rem"
+        height="2rem"
         viewBox="0 0 135.46666 135.46666"
-        id="svg5"
+        id="svg"
         className={themeClass}
         onClick={themeHandler}
       >
