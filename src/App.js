@@ -1,5 +1,6 @@
 import { Switch, Route } from "react-router";
 import Contact from "./components/Contact";
+import Home from "./components/Home";
 import Layout from "./components/Layout";
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
       <Switch>
         <Route path="/contact" exact>
           <Contact />
+        </Route>
+        <Route path="">
+          <Home />
         </Route>
       </Switch>
     </Layout>

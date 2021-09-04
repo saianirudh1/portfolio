@@ -1,0 +1,83 @@
+.react {
+  width: 10vw;
+  height: 10vw;
+}
+
+.react * {
+  fill: var(--theme-primary-text);
+}
+
+.react:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.js {
+  width: 10vw;
+  height: 10vw;
+}
+
+.js .bg {
+  fill: var(--theme-secondary-background);
+}
+
+.js .text {
+  fill: var(--theme-primary-text);
+}
+
+.js:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.test {
+  width: 10vw;
+  height: 10vw;
+}
+
+.test polygon {
+  fill: var(--theme-primary-text);
+}
+
+.test path {
+  fill: var(--theme-primary-text);
+}
+
+.test:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.css {
+  width: 10vw;
+  height: 10vw;
+}
+
+.css .bg {
+  fill: var(--theme-background);
+}
+
+.css .text {
+  fill: var(--theme-primary-text);
+}
+
+.css:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.java {
+  width: 10vw;
+  height: 10vw;
+  fill: var(--theme-primary-text);
+}
+
+.java:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: transform 0.3s ease-in-out;
+}
