@@ -15,6 +15,9 @@
   --theme-secondary-background: #d1d0d0;
   --theme-input-background: #d1d0d0;
   --theme-background-fallback: #8a2387;
+  --theme-linear-bg1: #f27121;
+  --theme-linear-bg2: #e94057;
+  --theme-linear-bg3: #8a2387;
   --theme-linear-background: to right, #f27121, #e94057, #8a2387;
 }
 
@@ -24,6 +27,9 @@
   --theme-secondary-background: #3a4750;
   --theme-input-background: #42515b;
   --theme-background-fallback: #c6ffdd;
+  --theme-linear-bg1: #1e539e;
+  --theme-linear-bg2: #ff3083;
+  --theme-linear-bg3: #f7797d;
   --theme-linear-background: to right, #f7797d, #fbd786, #c6ffdd;
 }
 
