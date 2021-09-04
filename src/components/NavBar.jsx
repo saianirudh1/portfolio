@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import LightBulb from "./ui/LightBulb";
 import BurgerMenu from "./ui/BurgerMenu";
@@ -58,9 +58,7 @@ function NavBar() {
       <div className={classes["nav-selector"]}>
         <ul className={classes["nav-list"]} style={navStyle}>
           <li className={classes["nav-item"]} onClick={headerTransition}>
-            <NavLink to="/" activeClassName={classes.active}>
-              .is()
-            </NavLink>
+            <Link to="/">.is()</Link>
           </li>
           <li className={classes["nav-item"]} onClick={headerTransition}>
             <Link to="/work">.work()</Link>
@@ -78,13 +76,13 @@ function NavBar() {
         <div className={classes["burger-menu"]}>
           <ul>
             <li className={classes["nav-item"]} onClick={headerTransition}>
-              <a href="/">.is()</a>
+              <Link to="/">.is()</Link>
             </li>
             <li className={classes["nav-item"]} onClick={headerTransition}>
-              <a href="/work">.work()</a>
+              <Link to="/work">.work()</Link>
             </li>
             <li className={classes["nav-item"]} onClick={headerTransition}>
-              <a href="/contact">.contact()</a>
+              <Link to="/contact">.contact()</Link>
             </li>
           </ul>
         </div>
