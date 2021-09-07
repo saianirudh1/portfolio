@@ -26,10 +26,16 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
+const initialSpanAnimation = {
+  crypto: { animation: "none" },
+  ball: { animation: "none" },
+};
+
 export default function Home() {
   const theme = useContext(ThemeContext).theme;
   const [translate, setTranslate] = useState({ transform: "translateY(5%)" });
   const [opacity, setOpacity] = useState({ opacity: 0 });
+  const [spanAnimation, setAnimation] = useState(initialSpanAnimation);
 
   useEffect(() => {
     const sectionTimeline = gsap.timeline({
@@ -222,6 +228,38 @@ export default function Home() {
     };
   }, []);
 
+  const addAnimation = function (e) {
+    const selector = e.target.dataset.name;
+
+    let newAnimation = {};
+    let time = 0;
+    if (selector === "crypto") {
+      newAnimation = {
+        ...spanAnimation,
+        crypto: { animation: `${classes.toTheMoon} 2.5s linear` },
+      };
+
+      time = 2600;
+
+      setAnimation(newAnimation);
+    }
+
+    if (selector === "ball") {
+      newAnimation = {
+        ...spanAnimation,
+        ball: { animation: `${classes.ball} 1s linear forwards` },
+      };
+
+      time = 1500;
+
+      setAnimation(newAnimation);
+    }
+
+    setTimeout(() => {
+      setAnimation(initialSpanAnimation);
+    }, time);
+  };
+
   return (
     <Fragment>
       <section className={classes["section-1"]} style={translate}>
@@ -328,7 +366,15 @@ export default function Home() {
           <ul className={classes.interests}>
             <li>
               <h3>
-                Cryptocurrenices <span className={classes.crypto}>🚀</span>
+                Cryptocurrenices{" "}
+                <span
+                  className={classes.crypto}
+                  onMouseEnter={addAnimation}
+                  style={spanAnimation.crypto}
+                  data-name="crypto"
+                >
+                  🚀
+                </span>
               </h3>
             </li>
             <li>
@@ -348,7 +394,15 @@ export default function Home() {
             </li>
             <li>
               <h3>
-                Basketball <span className={classes.ball}>🏀</span>
+                Basketball{" "}
+                <span
+                  className={classes.ball}
+                  onMouseEnter={addAnimation}
+                  style={spanAnimation.ball}
+                  data-name="ball"
+                >
+                  🏀
+                </span>
               </h3>
             </li>
           </ul>
