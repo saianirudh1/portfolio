@@ -1,5 +1,4 @@
 import { Fragment, useContext, useEffect, useState } from "react";
-import { gsap } from "gsap";
 
 import Typewriter from "typewriter-effect";
 import { ThemeContext } from "../context/theme-context";
@@ -21,13 +20,22 @@ import photo from "../img/photo3.jpg";
 
 import classes from "./styles/home.module.css";
 
+import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+const initialSpanAnimation = {
+  crypto: { animation: "none" },
+  ball: { animation: "none" },
+};
 
 export default function Home() {
   const theme = useContext(ThemeContext).theme;
   const [translate, setTranslate] = useState({ transform: "translateY(5%)" });
   const [opacity, setOpacity] = useState({ opacity: 0 });
+  const [spanAnimation, setAnimation] = useState(initialSpanAnimation);
 
   useEffect(() => {
     const sectionTimeline = gsap.timeline({
@@ -83,7 +91,12 @@ export default function Home() {
         .from(`.${classes.skills}`, {
           duration: 1,
           opacity: 0,
-        });
+        })
+        .from(`.${classes["interests-title"]}`, {
+          duration: 1,
+          ...animation,
+        })
+        .from(`.${classes.interests}`, { duration: 1, ...animation });
     };
 
     const desktop = function () {
@@ -170,6 +183,26 @@ export default function Home() {
             toggleActions: "play none none reset",
             start: "top-=350 center",
           },
+        })
+        .from(`.${classes["interests-title"]}`, {
+          duration: 1,
+          ...animation,
+          scrollTrigger: {
+            trigger: `.${classes["interests-title"]}`,
+            start: "top-=300 center",
+            end: "bottom center",
+            scrub: true,
+          },
+        })
+        .from(`.${classes.interests}`, {
+          duration: 1,
+          ...animation,
+          scrollTrigger: {
+            trigger: `.${classes.interests}`,
+            start: "top-=300 center",
+            end: "bottom-=100 center",
+            scrub: true,
+          },
         });
     };
 
@@ -194,6 +227,38 @@ export default function Home() {
       clearTimeout(timer);
     };
   }, []);
+
+  const addAnimation = function (e) {
+    const selector = e.target.dataset.name;
+
+    let newAnimation = {};
+    let time = 0;
+    if (selector === "crypto") {
+      newAnimation = {
+        ...spanAnimation,
+        crypto: { animation: `${classes.toTheMoon} 2.5s linear` },
+      };
+
+      time = 2600;
+
+      setAnimation(newAnimation);
+    }
+
+    if (selector === "ball") {
+      newAnimation = {
+        ...spanAnimation,
+        ball: { animation: `${classes.ball} 1s linear forwards` },
+      };
+
+      time = 1500;
+
+      setAnimation(newAnimation);
+    }
+
+    setTimeout(() => {
+      setAnimation(initialSpanAnimation);
+    }, time);
+  };
 
   return (
     <Fragment>
@@ -240,17 +305,18 @@ export default function Home() {
       <section>
         <div className={classes.content}>
           <div className={classes["about-container"]}>
-            <div className={classes.summary}>
-              <h2 className={classes["summary-title"]}>{".about( ) {"}</h2>
-              <p className={classes["summary-description"]}>
-                I like solving real world problems with the help of Computer
-                Science.
-              </p>
-              <h2 className={classes["summary-title"]}>{"}"}</h2>
-            </div>
+            <h2 className={classes["summary-title"]}>{".about( ) {"}</h2>
+            <p className={classes["summary-description"]}>
+              I'm an experienced software engineer who constantly seeks out
+              innovative solutions to everyday problems. In my years in this
+              industry, I've honed my analytical thinking and collaboration
+              skills, and I love working with a team. I also dedicate my time to
+              learn new technologies whenever I can.
+            </p>
+            <h2 className={classes["summary-title"]}>{"}"}</h2>
           </div>
           <div className={classes["experience-container"]}>
-            <h2 className={classes["experience-title"]}>{".experience[ "}</h2>
+            <h2 className={classes["experience-title"]}>{".experience [ "}</h2>
             <div className={classes.description}>
               <h3 className={classes["description-title"]}>
                 tcs :<br />
@@ -278,7 +344,7 @@ export default function Home() {
           </div>
         </div>
         <div className={classes["skills-container"]}>
-          <h2 className={classes.title}>{".skills( ) {"}</h2>
+          <h2 className={classes.title}>{".skills ["}</h2>
           <div className={classes.skills}>
             <ReactLogo className={classes.img} />
             <ReduxLogo className={classes.img} />
@@ -293,7 +359,54 @@ export default function Home() {
             <SpringLogo className={classes.img} />
             <KotlinLogo className={classes.img} />
           </div>
-          <h2 className={classes.title}>{"}"}</h2>
+          <h2 className={classes.title}>{"]"}</h2>
+        </div>
+        <div className={classes["interests-container"]}>
+          <h2 className={classes["interests-title"]}>{".interests ["}</h2>
+          <ul className={classes.interests}>
+            <li>
+              <h3>
+                Cryptocurrenices{" "}
+                <span
+                  className={classes.crypto}
+                  onMouseEnter={addAnimation}
+                  style={spanAnimation.crypto}
+                  data-name="crypto"
+                >
+                  🚀
+                </span>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                Stocks <span>📈</span>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                Gaming <span>🎮</span>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                Music <span>🎵</span>
+              </h3>
+            </li>
+            <li>
+              <h3>
+                Basketball{" "}
+                <span
+                  className={classes.ball}
+                  onMouseEnter={addAnimation}
+                  style={spanAnimation.ball}
+                  data-name="ball"
+                >
+                  🏀
+                </span>
+              </h3>
+            </li>
+          </ul>
+          <h2 className={classes["interests-title"]}>{"]"}</h2>
         </div>
       </section>
     </Fragment>

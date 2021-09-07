@@ -175,7 +175,7 @@
 .summary-description {
   color: var(--theme-primary-text);
   font-size: clamp(0em, calc(100% + 0.5vw), 3em);
-  font-weight: 350;
+  font-weight: 450;
   font-style: italic;
   padding: 1vw 2.5vw;
   letter-spacing: 0.1em;
@@ -246,6 +246,7 @@
 
 /* Experience Section Styles */
 .experience-container {
+  margin-top: 4vw;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 1;
@@ -289,7 +290,7 @@
 .description-text {
   color: var(--theme-primary-text);
   font-size: clamp(0em, calc(100% + 0.5vw), 3em);
-  font-weight: 350;
+  font-weight: 450;
   font-style: italic;
   padding: 0 1rem;
   letter-spacing: 0.1em;
@@ -334,10 +335,10 @@
 .skills::before {
   content: "";
   width: 15vw;
-  height: 11vw;
+  height: 12vw;
   position: absolute;
   left: -10rem;
-  top: 1rem;
+  top: 0rem;
   z-index: 1;
   background-color: var(--theme-background);
 }
@@ -345,10 +346,10 @@
 .skills::after {
   content: "";
   width: 15vw;
-  height: 11vw;
+  height: 12vw;
   position: absolute;
   right: -10rem;
-  top: 1rem;
+  top: 0rem;
   z-index: 1;
   background-color: var(--theme-background);
 }
@@ -359,7 +360,6 @@
   margin: 1rem 2rem;
   animation: ticker 35s linear infinite;
 }
-
 @keyframes ticker {
   0% {
     transform: translate3d(100vw, 0, 0);
@@ -367,6 +367,93 @@
 
   100% {
     transform: translate3d(-175vw, 0, 0);
+  }
+}
+
+/* Interests Styles */
+.interests-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  padding: 0 5vw;
+  margin: 4vw 0;
+}
+
+.interests-title {
+  color: var(--theme-primary-text);
+  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  letter-spacing: 0.025em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.interests {
+  list-style: none;
+}
+
+.interests h3 {
+  color: var(--theme-primary-text);
+  font-size: clamp(0em, calc(100% + 0.5vw), 3em);
+  font-weight: 450;
+  font-style: italic;
+  padding: 1vw 2.5vw;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.interests span {
+  cursor: pointer;
+  font-style: normal;
+}
+
+.crypto {
+  position: absolute;
+  animation: none;
+}
+
+@keyframes toTheMoon {
+  0% {
+    transform: translate3d(0rem, 0rem, 0rem);
+  }
+
+  25% {
+    transform: translate3d(40rem, -10rem, 0rem);
+  }
+
+  50% {
+    transform: translate3d(80rem, -25rem, 0rem);
+  }
+
+  100% {
+    transform: translate3d(100rem, -100rem, 0rem);
+  }
+}
+
+.ball {
+  position: absolute;
+  animation: none;
+}
+
+@keyframes ball {
+  0% {
+    transform: translate3d(0rem, 0rem, 0rem) rotateZ(0deg);
+  }
+
+  25% {
+    transform: translate3d(0rem, 5rem, 0rem) rotateZ(0deg);
+  }
+
+  50% {
+    transform: translate3d(2rem, 2.5rem, 0rem) rotateZ(180deg);
+  }
+
+  75% {
+    transform: translate3d(2.5rem, 5rem, 0rem) rotateZ(180deg);
+  }
+
+  100% {
+    transform: translate3d(4rem, 5rem, 0rem) rotateZ(360deg);
   }
 }
 
@@ -386,11 +473,17 @@
     padding-top: 4vw;
   }
 
-  .summary-title {
+  .summary-title,
+  .experience-title,
+  .title,
+  .description-title,
+  .interests-title {
     font-size: 1em;
   }
 
-  .summary-description {
+  .summary-description,
+  .description-text,
+  .interests li {
     font-size: 0.75em;
   }
 
@@ -410,22 +503,6 @@
 
   .description {
     padding-top: 4vw;
-  }
-
-  .experience-title {
-    font-size: 1em;
-  }
-
-  .title {
-    font-size: 1em;
-  }
-
-  .description-title {
-    font-size: 1em;
-  }
-
-  .description-text {
-    font-size: 0.75em;
   }
 
   .img {
