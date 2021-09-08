@@ -1,0 +1,78 @@
+.card {
+  width: 30vw;
+  height: 20rem;
+  position: relative;
+  isolation: isolate;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--theme-background);
+  opacity: 0.5;
+  inset: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out;
+}
+
+.card:hover::before {
+  transform: translateY(0%);
+}
+
+.card p {
+  color: var(--theme-primary-text);
+  font-size: clamp(1rem, 0.5vw + 1rem, 2rem);
+  letter-spacing: 0.1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in 0.15s;
+}
+
+.card button {
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  font-size: clamp(1rem, 0.5vw + 1rem, 2rem);
+  color: var(--theme-background);
+  background-color: var(--theme-primary-text);
+  opacity: 0;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in 0.15s;
+}
+
+.github {
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+  color: var(--theme-primary-text);
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in 0.15s;
+}
+
+.card:hover p,
+.card:hover button,
+.card:hover .github {
+  opacity: 1;
+}
+
+.card-title {
+  color: var(--theme-primary-text);
+  margin: 1rem 0;
+  font-size: clamp(1rem, 0.6vw + 1rem, 2.5rem);
+  text-align: center;
+}
+
+@media screen and (max-width: 710px) {
+  .card {
+    width: 75vw;
+  }
+}
