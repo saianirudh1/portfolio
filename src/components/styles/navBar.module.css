@@ -79,7 +79,8 @@
   position: absolute;
   right: 0%;
   background-color: var(--theme-secondary-background);
-  transform: translateX(100%);
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.75);
+  transform: translateX(125%);
   transition: transform 0.35s ease-out;
   z-index: 50;
 }

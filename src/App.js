@@ -1,7 +1,8 @@
-import { Switch, Route } from "react-router";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
+import { Switch, Route, Redirect } from "react-router";
 import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Work from "./components/Work";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -10,8 +11,14 @@ function App() {
         <Route path="/contact" exact>
           <Contact />
         </Route>
-        <Route path="">
+        <Route path="/work" exact>
+          <Work />
+        </Route>
+        <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="">
+          <Route render={() => <Redirect to={{ pathname: "/" }} />} />
         </Route>
       </Switch>
     </Layout>

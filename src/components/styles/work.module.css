@@ -1,0 +1,31 @@
+.work-container {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.work-heading {
+  grid-row-start: 1;
+  font-size: clamp(1.25em, 2.25vw + 1rem, 5.75em);
+  color: var(--theme-primary-text);
+  text-align: center;
+  margin: 1rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+  place-items: center;
+}
+
+.project-1 {
+  background-image: url(../../img/photo3.jpg);
+  opacity: 0.95;
+}
+
+@media screen and (max-width: 710px) {
+  .projects {
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+  }
+}
