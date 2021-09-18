@@ -33,7 +33,7 @@
 .greeting {
   color: var(--theme-primary-text);
   width: max-content;
-  font-size: clamp(0.5rem, calc(100% + 1vw), 4rem);
+  font-size: clamp(0.5rem, (100% + 1vw), 4rem);
   user-select: none;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -47,7 +47,7 @@
 }
 
 .static-text h2 {
-  font-size: clamp(1.65rem, calc(100% + 6vw), 11rem);
+  font-size: clamp(1.65rem, (100% + 6vw), 11rem);
   margin: 0;
   color: var(--theme-primary-text);
   user-select: none;
@@ -61,7 +61,7 @@
 
 /* Moving text Styles */
 .dynamic-text {
-  font-size: clamp(2rem, calc(100% + 6vw), 11rem);
+  font-size: clamp(2rem, (100% + 6vw), 11rem);
   user-select: none;
   font-weight: 600;
   position: relative;
@@ -74,7 +74,7 @@
 }
 
 .dynamic-cursor {
-  font-size: clamp(2rem, calc(100% + 6vw), 11rem);
+  font-size: clamp(2rem, (100% + 6vw), 11rem);
   user-select: none;
   color: var(--theme-primary-text);
   animation: blink 1s infinite;
@@ -103,14 +103,14 @@
   color: var(--theme-primary-text);
   font-weight: lighter;
   font-style: italic;
-  font-size: clamp(1rem, calc(100% + 0.05vw), 1.25rem);
+  font-size: clamp(1rem, (100% + 0.05vw), 1.25rem);
   opacity: 0;
   transition: opacity 1s ease-in 2.5s;
 }
 
 .scroll-content span {
   transform: rotateX(180deg);
-  font-size: clamp(1rem, calc(100% + 0.05vw), 1.25rem);
+  font-size: clamp(1rem, (100% + 0.05vw), 1.25rem);
   animation: scroll 1s linear infinite;
 }
 
@@ -173,7 +173,7 @@
 
 .summary-description {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, calc(100% + 0.5vw), 3em);
+  font-size: clamp(0em, (100% + 0.5vw), 3em);
   font-weight: 450;
   font-style: italic;
   padding: 1vw 2.5vw;
@@ -183,7 +183,7 @@
 
 .summary-title {
   color: var(--theme-primary-text);
-  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  font-size: clamp(1.25em, (100% + 2.75vw), 5.75em);
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
@@ -258,7 +258,7 @@
 
 .experience-title {
   color: var(--theme-primary-text);
-  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  font-size: clamp(1.25em, (100% + 2.75vw), 5.75em);
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
@@ -267,7 +267,7 @@
 
 .title {
   color: var(--theme-primary-text);
-  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  font-size: clamp(1.25em, (100% + 2.75vw), 5.75em);
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
@@ -286,7 +286,7 @@
 .description-title {
   color: var(--theme-primary-text);
   letter-spacing: 0.1em;
-  font-size: clamp(0em, calc(100% + 0.75vw), 3em);
+  font-size: clamp(0em, (100% + 0.75vw), 3em);
   font-style: italic;
   font-weight: 500;
   user-select: none;
@@ -294,7 +294,7 @@
 
 .description-text {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, calc(100% + 0.5vw), 3em);
+  font-size: clamp(0em, (100% + 0.5vw), 3em);
   font-weight: 450;
   font-style: italic;
   padding: 0 1rem;
@@ -389,7 +389,7 @@
 
 .interests-title {
   color: var(--theme-primary-text);
-  font-size: clamp(1.25em, calc(100% + 2.75vw), 5.75em);
+  font-size: clamp(1.25em, (100% + 2.75vw), 5.75em);
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
@@ -402,7 +402,7 @@
 
 .interests h3 {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, calc(100% + 0.5vw), 3em);
+  font-size: clamp(0em, (100% + 0.5vw), 3em);
   font-weight: 450;
   font-style: italic;
   padding: 1vw 2.5vw;
@@ -472,11 +472,11 @@
   .dynamic-text,
   .dynamic-cursor,
   .static-text h2 {
-    font-size: clamp(1.5rem, calc(100% + 3vw), 11rem);
+    font-size: clamp(1.5rem, (100% + 3vw), 11rem);
   }
 
   .greeting {
-    font-size: clamp(0.5rem, calc(100% + 0.015vw), 4rem);
+    font-size: clamp(0.5rem, (100% + 0.015vw), 4rem);
   }
 
   .summary {
