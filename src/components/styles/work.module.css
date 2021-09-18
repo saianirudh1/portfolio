@@ -12,6 +12,7 @@
   color: var(--theme-primary-text);
   text-align: center;
   margin: 1rem;
+  user-select: none;
 }
 
 .projects {
@@ -21,14 +22,40 @@
   place-items: center;
 }
 
-.project-1 {
-  background-image: url(../../img/photo3.jpg);
+.project {
+  background-size: 30vw 20rem;
   opacity: 0.95;
+}
+
+.project-1 {
+  background-image: url(../../img/Crypto\ Alerts.png);
+}
+
+.project-2 {
+  background-image: url(../../img/Algorithm\ Visualizer.png);
+}
+
+.project-3 {
+  background-image: url(../../img/Forkify.png);
+}
+
+.project-4 {
+  background-image: url(../../img/Quote.png);
+}
+
+.project-5 {
+  background-image: url(../../img/Mapty.png);
 }
 
 @media screen and (max-width: 710px) {
   .projects {
     grid-template-rows: auto;
     grid-template-columns: auto;
+  }
+
+  .project {
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.95;
   }
 }

@@ -32,6 +32,7 @@
   letter-spacing: 0.1rem;
   opacity: 0;
   transition: opacity 0.5s ease-in 0.15s;
+  user-select: none;
 }
 
 .card button {
@@ -69,6 +70,7 @@
   margin: 1rem 0;
   font-size: clamp(1rem, 0.6vw + 1rem, 2.5rem);
   text-align: center;
+  user-select: none;
 }
 
 @media screen and (max-width: 710px) {

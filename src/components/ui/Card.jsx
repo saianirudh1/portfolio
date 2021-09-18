@@ -7,9 +7,11 @@ function Card(props) {
       <div className={`${classes.card} ${props.className}`}>
         <p>{data.summary}</p>
         <button>
-          <a href={data.url}>Learn More</a>
+          <a href={data.url} target="_blank" rel="noreferrer">
+            Learn More
+          </a>
         </button>
-        <a href="/">
+        <a href={data.github} target="_blank" rel="noreferrer">
           <div className={`fa fa-github ${classes.github}`} />
         </a>
       </div>
