@@ -34,6 +34,7 @@
   color: var(--theme-primary-text);
   width: max-content;
   font-size: clamp(0.5rem, calc(100% + 1vw), 4rem);
+  user-select: none;
   font-weight: 400;
   letter-spacing: 0.05em;
   padding: 0 5vw;
@@ -49,12 +50,8 @@
   font-size: clamp(1.65rem, calc(100% + 6vw), 11rem);
   margin: 0;
   color: var(--theme-primary-text);
+  user-select: none;
   font-weight: 600;
-}
-
-.static-text h2 span {
-  font-style: italic;
-  font-weight: 150;
 }
 
 .header ul {
@@ -65,6 +62,7 @@
 /* Moving text Styles */
 .dynamic-text {
   font-size: clamp(2rem, calc(100% + 6vw), 11rem);
+  user-select: none;
   font-weight: 600;
   position: relative;
   background: var(--theme-background-fallback);
@@ -77,6 +75,7 @@
 
 .dynamic-cursor {
   font-size: clamp(2rem, calc(100% + 6vw), 11rem);
+  user-select: none;
   color: var(--theme-primary-text);
   animation: blink 1s infinite;
   border-radius: 1rem;
@@ -179,6 +178,7 @@
   font-style: italic;
   padding: 1vw 2.5vw;
   letter-spacing: 0.1em;
+  user-select: none;
 }
 
 .summary-title {
@@ -187,6 +187,7 @@
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
+  user-select: none;
 }
 
 .profile {
@@ -261,6 +262,7 @@
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
+  user-select: none;
 }
 
 .title {
@@ -269,6 +271,7 @@
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
+  user-select: none;
 }
 
 .description {
@@ -277,6 +280,7 @@
   padding-left: 4vw;
   padding-right: 4vw;
   flex-direction: column;
+  user-select: none;
 }
 
 .description-title {
@@ -285,6 +289,7 @@
   font-size: clamp(0em, calc(100% + 0.75vw), 3em);
   font-style: italic;
   font-weight: 500;
+  user-select: none;
 }
 
 .description-text {
@@ -294,6 +299,7 @@
   font-style: italic;
   padding: 0 1rem;
   letter-spacing: 0.1em;
+  user-select: none;
 }
 
 .description-text a {
@@ -306,6 +312,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+  user-select: none;
 }
 
 .description-text a::after {
@@ -386,6 +393,7 @@
   letter-spacing: 0.025em;
   font-weight: 500;
   font-style: italic;
+  user-select: none;
 }
 
 .interests {
@@ -400,11 +408,13 @@
   padding: 1vw 2.5vw;
   letter-spacing: 0.1em;
   position: relative;
+  user-select: none;
 }
 
 .interests span {
   cursor: pointer;
   font-style: normal;
+  user-select: none;
 }
 
 .crypto {
