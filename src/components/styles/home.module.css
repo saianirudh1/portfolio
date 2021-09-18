@@ -173,7 +173,7 @@
 
 .summary-description {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, 100% + 0.5vw, 3em);
+  font-size: clamp(0.1em, 100% + 0.5vw, 3em);
   font-weight: 450;
   font-style: italic;
   padding: 1vw 2.5vw;
@@ -286,7 +286,7 @@
 .description-title {
   color: var(--theme-primary-text);
   letter-spacing: 0.1em;
-  font-size: clamp(0em, 100% + 0.75vw, 3em);
+  font-size: clamp(0.1em, 100% + 0.75vw, 3em);
   font-style: italic;
   font-weight: 500;
   user-select: none;
@@ -294,7 +294,7 @@
 
 .description-text {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, 100% + 0.5vw, 3em);
+  font-size: clamp(0.1em, 100% + 0.5vw, 3em);
   font-weight: 450;
   font-style: italic;
   padding: 0 1rem;
@@ -402,7 +402,7 @@
 
 .interests h3 {
   color: var(--theme-primary-text);
-  font-size: clamp(0em, 100% + 0.5vw, 3em);
+  font-size: clamp(0.1em, 100% + 0.5vw, 3em);
   font-weight: 450;
   font-style: italic;
   padding: 1vw 2.5vw;
