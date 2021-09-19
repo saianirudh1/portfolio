@@ -10,7 +10,10 @@ import classes from "./styles/navBar.module.css";
 function NavBar() {
   const location = useLocation();
   const name =
-    location.pathname.slice(1).length === 0 ? "is" : location.pathname.slice(1);
+    location.pathname.slice(1).length === 0 || "thankyou"
+      ? "is"
+      : location.pathname.slice(1);
+
   const [heading, setHeading] = useState(`.${name}()`);
 
   const [navStyle, setNavStyle] = useState({});

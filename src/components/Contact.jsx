@@ -50,7 +50,7 @@ export default function Contact() {
           <input
             type="hidden"
             name="_next"
-            value="http://localhost:3000/contact"
+            value="https://bsaianirudh.com/thankyou"
           />
           <div className={classes["form-inputs"]}>
             <label>.setName()</label>

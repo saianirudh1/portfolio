@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
+import Thankyou from "./components/Thankyou";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <Switch>
         <Route path="/contact" exact>
           <Contact />
+        </Route>
+        <Route path="/thankyou" exact>
+          <Thankyou />
         </Route>
         <Route path="/work" exact>
           <Work />
