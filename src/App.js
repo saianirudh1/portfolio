@@ -12,9 +12,6 @@ function App() {
         <Route path="/contact" exact>
           <Contact />
         </Route>
-        <Route path="/thankyou" exact>
-          <Thankyou />
-        </Route>
         <Route path="/work" exact>
           <Work />
         </Route>

@@ -47,11 +47,7 @@ export default function Contact() {
           className={classes.form}
         >
           <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://bsaianirudh.com/thankyou"
-          />
+          <input type="hidden" name="_next" value="https://bsaianirudh.com/" />
           <div className={classes["form-inputs"]}>
             <label>.setName()</label>
             <input type="text" name="name" required />
