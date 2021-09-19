@@ -3,7 +3,6 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
-import Thankyou from "./components/Thankyou";
 
 function App() {
   return (
