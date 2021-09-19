@@ -134,11 +134,11 @@
 }
 
 .dark-border {
-  background-image: url("../../svg/layered-waves-dark.svg");
+  background-image: url("../../media/svg/layered-waves-dark.svg");
 }
 
 .light-border {
-  background-image: url("../../svg/layered-waves-light.svg");
+  background-image: url("../../media/svg/layered-waves-light.svg");
 }
 
 /* Media Queries */

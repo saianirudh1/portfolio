@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from "./ui/Card";
+
+import resume from "../media/resume.pdf";
+
 import classes from "./styles/work.module.css";
 
 const projects = [
@@ -80,6 +83,11 @@ function Work() {
           data={projects[4]}
           className={`${classes.project} ${classes["project-5"]}`}
         />
+      </div>
+      <div className={classes.resume}>
+        <a href={resume} download="Sai Anirudh CV">
+          &#10515; <span>Curriculum vitae</span>
+        </a>
       </div>
     </section>
   );

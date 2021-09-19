@@ -1,13 +1,12 @@
 .work-container {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   transform: translateY(2%);
   opacity: 0;
   transition: transform 0.3s ease-in, opacity 0.3s ease-in;
 }
 
 .work-heading {
-  grid-row-start: 1;
   font-size: clamp(1.25em, 2.25vw + 1rem, 5.75em);
   color: var(--theme-primary-text);
   text-align: center;
@@ -28,23 +27,63 @@
 }
 
 .project-1 {
-  background-image: url(../../img/Crypto\ Alerts.png);
+  background-image: url(../../media/img/Crypto\ Alerts.png);
 }
 
 .project-2 {
-  background-image: url(../../img/Algorithm\ Visualizer.png);
+  background-image: url(../../media/img/Algorithm\ Visualizer.png);
 }
 
 .project-3 {
-  background-image: url(../../img/Forkify.png);
+  background-image: url(../../media/img/Forkify.png);
 }
 
 .project-4 {
-  background-image: url(../../img/Quote.png);
+  background-image: url(../../media/img/Quote.png);
 }
 
 .project-5 {
-  background-image: url(../../img/Mapty.png);
+  background-image: url(../../media/img/Mapty.png);
+}
+
+.resume {
+  /* background-color: red; */
+  display: grid;
+  place-items: center;
+}
+
+.resume a {
+  color: var(--theme-primary-text);
+  font-size: clamp(1.25rem, 1vw + 1rem, 4rem);
+  margin-bottom: 2.5rem;
+  user-select: none;
+  position: relative;
+}
+
+.resume a span {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.2rem;
+}
+
+.resume a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 50%;
+  bottom: -4px;
+  background: var(--theme-background-fallback);
+  background: -webkit-linear-gradient(var(--theme-linear-background));
+  background: linear-gradient(var(--theme-linear-background));
+  transition: width 0.3s ease-in;
+  transform: translate(-50%, 0);
+}
+
+.resume a:hover::after {
+  width: 100%;
 }
 
 @media screen and (max-width: 710px) {
