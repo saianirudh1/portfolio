@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Card from "./ui/Card";
+
+import resume from "../media/resume.pdf";
+
 import classes from "./styles/work.module.css";
 
 const projects = [
@@ -56,30 +59,22 @@ function Work() {
     };
   }, []);
 
+  const cards = projects.map((project, index) => (
+    <Card
+      key={project.title}
+      data={project}
+      className={`${classes.project} ${classes[`project-${index + 1}`]}`}
+    />
+  ));
+
   return (
     <section className={classes["work-container"]} style={transform}>
       <h1 className={classes["work-heading"]}>.projects</h1>
-      <div className={classes.projects}>
-        <Card
-          data={projects[0]}
-          className={`${classes.project} ${classes["project-1"]}`}
-        />
-        <Card
-          data={projects[1]}
-          className={`${classes.project} ${classes["project-2"]}`}
-        />
-        <Card
-          data={projects[2]}
-          className={`${classes.project} ${classes["project-3"]}`}
-        />
-        <Card
-          data={projects[3]}
-          className={`${classes.project} ${classes["project-4"]}`}
-        />
-        <Card
-          data={projects[4]}
-          className={`${classes.project} ${classes["project-5"]}`}
-        />
+      <div className={classes.projects}>{cards}</div>
+      <div className={classes.resume}>
+        <a href={resume} download="Sai Anirudh CV">
+          &#10515; <span>Curriculum vitae</span>
+        </a>
       </div>
     </section>
   );

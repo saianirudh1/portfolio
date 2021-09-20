@@ -16,7 +16,7 @@ import Java from "./resources/JavaLogo";
 import SpringLogo from "./resources/SpringLogo";
 import KotlinLogo from "./resources/KotlinLogo";
 
-import photo from "../img/photo3.jpg";
+import photo from "../media/img/photo3.jpg";
 
 import classes from "./styles/home.module.css";
 
