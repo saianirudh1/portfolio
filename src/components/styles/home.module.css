@@ -365,10 +365,18 @@
   height: 10vw;
   width: 100%;
   margin: 1rem 2rem;
-  animation: ticker 35s linear infinite;
+  animation: ticker 60s linear infinite;
 }
 @keyframes ticker {
   0% {
+    transform: translate3d(100vw, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-175vw, 0, 0);
+  }
+
+  50.01% {
     transform: translate3d(100vw, 0, 0);
   }
 
@@ -439,6 +447,125 @@
     transform: translate3d(100rem, -100rem, 0rem);
   }
 }
+
+/* .music {
+  position: relative;
+}
+
+.music::before {
+  content: "🎵";
+  position: absolute;
+  font-size: 50%;
+  animation: musicBefore 1s linear forwards infinite;
+}
+
+@keyframes musicBefore {
+  0% {
+    top: -10px;
+    left: -5px;
+    opacity: 1;
+  }
+
+  15% {
+    left: -12.75px;
+  }
+
+  25% {
+    left: -5.75px;
+  }
+
+  35% {
+    left: -8.75px;
+  }
+
+  40% {
+    left: -9.5px;
+  }
+
+  50% {
+    left: -6.5px;
+  }
+
+  60% {
+    left: -12.5px;
+  }
+
+  65% {
+    left: -19.25px;
+  }
+
+  75% {
+    left: -13.25px;
+  }
+
+  85% {
+    left: -16.25px;
+  }
+
+  100% {
+    top: -27px;
+    left: -20px;
+    opacity: 0;
+  }
+}
+
+.music::after {
+  content: "🎵";
+  position: absolute;
+  animation: musicAfter 1s linear forwards infinite;
+}
+
+@keyframes musicAfter {
+  0% {
+    font-size: 75%;
+    right: -20px;
+    top: 0px;
+    opacity: 1;
+  }
+
+  15% {
+    right: -28px;
+  }
+
+  25% {
+    right: -22px;
+  }
+
+  35% {
+    right: -25px;
+  }
+
+  40% {
+    right: -33px;
+  }
+
+  50% {
+    right: -27px;
+  }
+
+  60% {
+    right: -30px;
+  }
+
+  65% {
+    right: -38px;
+  }
+
+  75% {
+    right: -32px;
+  }
+
+  85% {
+    right: -35px;
+  }
+
+  100% {
+    font-size: 50%;
+    right: -40px;
+    top: -25px;
+    opacity: 0;
+  }
+} */
 
 .ball {
   position: absolute;
@@ -517,6 +644,6 @@
 
   .img {
     margin: 1rem 0.5rem;
-    animation: ticker 20s linear infinite;
+    animation: ticker 35s linear infinite;
   }
 }

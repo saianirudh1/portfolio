@@ -8,6 +8,7 @@
 
 .work-heading {
   font-size: clamp(1.25em, 2.25vw + 1rem, 5.75em);
+  letter-spacing: 0.2rem;
   color: var(--theme-primary-text);
   text-align: center;
   margin: 1rem;
